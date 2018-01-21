@@ -52,11 +52,11 @@
 
 ### 运行环境
 
-`Python 3.x`
+`Python 3.x` (<a href="https://www.python.org/downloads/release/python-364/">参考下载地址</a>)
 
-`adb`（<a href="https://www.xda-developers.com/install-adb-windows-macos-linux/">配置方式</a>）
+`adb`（<a href="https://www.xda-developers.com/install-adb-windows-macos-linux/">adb配置方式</a>）
 
-`雷电模拟器`（<a href="http://www.ldmnq.com">使用和下载指南</a>）
+`雷电模拟器`（<a href="http://www.ldmnq.com">模拟器使用和下载指南</a>）
 
 ### 使用教程
 
@@ -68,11 +68,9 @@
 
 ### 局限
 
-1.当前程序运行结果无法通过微信的反作弊检测。如果动态改变屏幕按压位置是否可以改善？
+1.垫子的跳跃系数是一个 `magic number`，暂且做不到随机初始化，通过不断重新开始游戏来学习最佳参数的理想状态；
 
-2.垫子的跳跃系数是一个 `magic number`，暂且做不到随机初始化，通过不断重新开始游戏来学习最佳参数的理想状态；
-
-3.不同尺寸的同种垫子要求各有一张素材图片，是否可以做到尺度不变的物体识别？（尝试过`OpenCV SIFT`，识别效果不是很理想）
+2.不同尺寸的同种垫子要求各有一张素材图片，是否可以做到尺度不变的物体识别？（尝试过`OpenCV SIFT`，识别效果不是很理想）
 
 ### 感谢
 

@@ -20,7 +20,9 @@ def jump(distance):
     # 按压时间 = 两点欧式距离 * 弹跳系数
     press_time = distance * 2.673
     press_time = int(press_time)
-    cmd = 'adb shell input swipe 320 410 320 410 ' + str(press_time)
+    rand = 50 * random.random()
+    cmd = 'adb shell input swipe {} {} {} {} {}'.format(400 + rand, 500 + rand, 400 + rand, 500 + rand, str(press_time))
+    #cmd = 'adb shell input swipe 320 410 320 410 ' + str(press_time)
     print(cmd)
     os.system(cmd)
 
@@ -109,7 +111,7 @@ def main():
     # 第一次跳跃固定按压时间为715.5-717ms
     i = input('继续游戏按y，其他按键重新开始')
     if i != 'y':
-        jump(267.7)
+        jump(267.7+random.random())
         time.sleep(random.uniform(1.5, 2))
 
     while True:
@@ -156,7 +158,7 @@ def main():
     
             # 在图片上圈出目标物体
             if loc == None or loc[0] > gravityCenterOfGuy[0]:
-                print('nothing match')
+                print('nothing match. Please jump next step by your own and restart this program.')
                 quit(255)
             else :
                 w = loc[2]

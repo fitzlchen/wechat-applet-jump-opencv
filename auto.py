@@ -61,7 +61,7 @@ def recognizeNextStep(nextImage, template, background):
     res = cv2.matchTemplate(nextImage,template,cv2.TM_CCOEFF_NORMED)
     min_val,max_val,min_loc,max_loc = cv2.minMaxLoc(res)
     # 可能出现人物阴影遮挡的情况，需要降低匹配度
-    if max_val < 0.8:
+    if max_val < 0.7:
         return None
     else :
         return (max_loc[0],max_loc[1],shape[1],shape[0])
@@ -157,7 +157,7 @@ def main():
                 loc = sorted(locs, key=lambda item: item[0])[0]
     
             # 在图片上圈出目标物体
-            if loc == None or loc[0] > gravityCenterOfGuy[0]:
+            if loc == None or loc[0] + loc[2]/2 > gravityCenterOfGuy[0]:
                 print('nothing match. Please jump next step by your own and restart this program.')
                 quit(255)
             else :

@@ -157,7 +157,7 @@ def main():
                 loc = sorted(locs, key=lambda item: item[0])[0]
     
             # 在图片上圈出目标物体
-            if loc == None or loc[0] + loc[2]/2 > gravityCenterOfGuy[0]:
+            if loc == None or loc[0] + loc[2]/2 + 5 > gravityCenterOfGuy[0]:
                 print('nothing match. Please jump next step by your own and restart this program.')
                 quit(255)
             else :
